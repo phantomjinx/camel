@@ -17,7 +17,6 @@
 package org.apache.camel.component.olingo4;
 
 import java.util.Map;
-
 import org.apache.camel.component.olingo4.internal.Olingo4ApiName;
 import org.apache.camel.spi.Metadata;
 import org.apache.camel.spi.UriParam;
@@ -62,6 +61,8 @@ public class Olingo4Configuration {
     private HttpAsyncClientBuilder httpAsyncClientBuilder;
     @UriParam
     private HttpClientBuilder httpClientBuilder;
+    @UriParam
+    private boolean filterAlreadySeen;
 
     public Olingo4ApiName getApiName() {
         return apiName;
@@ -184,6 +185,14 @@ public class Olingo4Configuration {
      */
     public void setHttpClientBuilder(HttpClientBuilder httpClientBuilder) {
         this.httpClientBuilder = httpClientBuilder;
+    }
+
+    public boolean getFilterAlreadySeen() {
+        return filterAlreadySeen;
+    }
+
+    public void setFilterAlreadySeen(boolean filterAlreadySeen) {
+        this.filterAlreadySeen = filterAlreadySeen;
     }
 
     @Override
